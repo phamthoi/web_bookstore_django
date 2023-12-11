@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+  font-size: 30px;
+  text-align : center;
+  line-height: 50px;
+}
+</style>
+<body>
+
+<p><button onclick="myMove()">Click Me</button></p> 
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<script>
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+  color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function getRandomChar(){
+    let char;
+    char = Math.floor((Math.random() * 25) + 97);
+    char = String.fromCharCode(char);
+    return char;
+}
+
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let posTop = 0;
+  let posLeft = 0;
+  let move = true; 
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  
+  function frame() {
+	const randomColor = getRandomColor();
+    elem.style.backgroundColor = randomColor;
+    const randomChar = getRandomChar();
+    elem.innerText = randomChar;
+    
+   	if(posTop >= 350) {
+    clearInterval(id);
+    }
+    else if (move) {
+      if (posLeft >= 350) {
+        move = false; 
+        posTop += 5; 
+      } else {
+        posLeft++;
+      }
+    } else {
+      if (posLeft <= 0) {
+        move = true; 
+        posTop += 5; 
+      } else {
+        posLeft--;
+      }
+    }
+    elem.style.top = posTop + "px";
+    elem.style.left = posLeft + "px";
+    posTop += 0.185;
+  }
+}
+</script>
+
+</body>
+</html>

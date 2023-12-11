@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main-container-content %}
+    <style>
+      h2{
+        color: #1eafbb;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+      }
+    </style>
+    <div class="container">
+      <div class="title" style="padding-top: 20px;">
+        <h2>Quản lý sách của bạn</h2>
+      </div>
+    </div>
+    <div class="container">
+      <button id="showFormBtn" class="btn btn-primary" > <a style="color: white; text-decoration: none;" href="{% url 'add_book' %}">Đăng sách</a></button>
+      <div class="d-flex justify-content-center">
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <h6 style="color: red;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h6>
+                {% endfor %}
+            </ul>
+        {% endif %} 
+        </div>
+    </div>
+    <div class="container">
+    <table class="table table-hover"> 
+      <thead style="background-color: black; color: white;">
+        <tr>
+          <td>Mã sách</td>
+          <td>Bìa sách</td>
+          <td>Tên sách</td>
+          <td>Tác giả</td>
+          <td>Hành động</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in BF %}
+        <tr>
+          <td>{{ item.book_id }}</td>
+          <td><img src="/web/media/{{item.cover_book}}" alt="cover book" class="img" style="width: 50px; height: 80px;"></td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.author }}</td>
+          <td>
+          <button class="btn btn-secondary"><a href="/web/media/{{item.book}}" target="_blank" style="text-decoration: none; color: white;">Xem</a></button>
+          <a href="delete/{{ item.book_id }}" onclick="return confirm('Bạn có muốn xóa sách {{ item.title }} không?');" class="btn btn-danger" style="text-decoration: none; color: white;">Xóa</a>
+          <button class="btn btn-primary"><a href="{% url 'update_book' item.book_id%}" target="_blank" style="text-decoration: none; color: white;">Chỉnh sửa</a></button>
+        </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+{% endblock %}

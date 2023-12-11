@@ -1,0 +1,14 @@
+<h1>Danh sách phản hồi</h1>
+{% if feedbacks %}
+    <ol>
+    {% for feedback in feedbacks %}
+        <li>
+            <strong>Tên: </strong>{{ feedback.name }}<br>
+            <strong>Email: </strong>{{ feedback.email }}<br>
+            <strong>Nội dung: </strong>{{ feedback.feedback }}
+        </li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>Chưa có phản hồi nào.</p>
+{% endif %}

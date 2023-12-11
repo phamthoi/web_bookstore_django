@@ -1,0 +1,140 @@
+#wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+#customer-info-wp{
+    padding: 15px;
+    flex-grow: 1;
+  }
+#order-review-wp{
+    padding: 15px;
+    flex-grow: 1;
+  }
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+input[type=tel] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  } */
+
+/* stylecontacts.css */
+
+/* Thiết lập font chung cho trang */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Thiết lập định dạng cho tiêu đề */
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Thiết lập phần wrapper */
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Phần thông tin khách hàng và biểu mẫu */
+#customer-info-wp, #order-review-wp {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+/* Định dạng input và textarea trong biểu mẫu */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+/* Định dạng nút Gửi */
+#btn-submit {
+  height: 40px;
+  border-radius: 60px;
+  width: 150px;
+  color: white;
+  background-color: #48ad48;
+  border: none;
+  cursor: pointer;
+}
+
+/* Định dạng vùng hiển thị thông tin công ty */
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Định dạng vùng hiển thị biểu tượng mạng xã hội */
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.social-media ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-media ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Thiết lập biểu mẫu Google Map */
+.map {
+  margin-top: 20px;
+}
+
+/* Thiết lập đối tượng iframe (Google Map) */
+iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
